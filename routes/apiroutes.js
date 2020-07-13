@@ -20,9 +20,9 @@ module.exports = function (app) {
     });
 
     app.delete('/api/notes/:id', function (req, res) {
-        // console.log("line 23 of apiroutes.js " + req.params.id);
+        console.log("line 23 of apiroutes.js " + req.params.id);
         const filteredDb = db.filter((note) => { return note.id !== req.params.id });
-        // console.log(filteredDb);
+        console.log(filteredDb);
         fs.writeFile('./db/db.json', JSON.stringify(filteredDb), function(err) {
             if (err) throw err;
         });
